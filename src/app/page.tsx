@@ -4,13 +4,13 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
-import Navbar from "../components/Navbar/topnav";
-import Headfirst from "../components/Header/first";
-import Middle from "../components/Middleheader/doko";
-import Firstlast from "../components/Firstlast/midcom";
-import Backbody from "../components/Body/headnav";
-import Secondbody from "../components/Secondbody/sara";
-import Footer from "../components/Footer/bottom";
+import Navbar from "../components/Navbar/HomeHeroNavbar";
+import Headfirst from "../components/Header/QualityExpertiseSection";
+import Middle from "../components/Middleheader/ServiceHighlights";
+import Firstlast from "../components/Firstlast/ManufacturingProcess";
+import Backbody from "../components/Body/ParallaxSoftgelBanner";
+import Secondbody from "../components/Secondbody/TestimonialsSlider";
+import Footer from "../components/Footer/MainFooter";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);

@@ -2,14 +2,14 @@
 import { useState,useEffect  } from "react";
 import { useRouter } from "next/router";// Import useRouter
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import "../components/Aboutnav/contactsoft.css";
+import "../components/Aboutnav/Contact.css";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone} from "react-icons/fa";
-import Google from '../components/map/google'
-import Footer from "../components/Footer/bottom";
+import Google from '../components/map/OfficeLocationMap'
+import Footer from "../components/Footer/MainFooter";
 import { ArrowUp } from "lucide-react"; // Arrow Icon
 
 
@@ -17,8 +17,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter(); // Initialize useRouter
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdow
-  const pathname = usePathname();
- 
+  // const pathname = usePathname();
+  const pathname = router.pathname;
   const [showButton, setShowButton] = useState(false);
   const [formData, setFormData] = useState({
     name: '',

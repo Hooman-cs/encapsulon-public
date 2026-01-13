@@ -3,24 +3,24 @@ import { useState, useEffect } from "react";
 // FIX 1: Removed unused/conflicting 'useRouter' from 'next/router'.
 // The 'usePathname' from 'next/navigation' is correctly used below.
 import Link from "next/link";
-
+import { useRouter } from "next/router";
 import { ArrowUp } from "lucide-react"; // Arrow Icon
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import "../components/Aboutnav/soft.css";
-import Footer from "../components/Footer/bottom";
-import { usePathname } from "next/navigation";
+import "../components/Aboutnav/AboutUs.css";
+import Footer from "../components/Footer/MainFooter";
+// import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // FIX 1: Remove 'router' declaration as it's not needed for active link logic with usePathname.
-  // const router = useRouter(); 
+  const router = useRouter(); 
   const [showButton, setShowButton] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const pathname = usePathname(); // Get current path for active state
-
+  // const pathname = usePathname(); // Get current path for active state
+  const pathname = router.pathname;
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };

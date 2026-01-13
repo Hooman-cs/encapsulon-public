@@ -2,13 +2,13 @@
 import { useState ,useEffect} from "react";
 import { useRouter } from "next/router";// Import useRouter
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import "../components/Aboutnav/drop.css";
+import "../components/Aboutnav/CustomFormulation.css";
 import { ArrowUp } from "lucide-react"; // Arrow Ico
-import Footer from "../components/Footer/bottom";
+import Footer from "../components/Footer/MainFooter";
 
 
 
@@ -16,7 +16,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter(); // Initialize useRouter
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state
-  const pathname = usePathname();
+  // const pathname = usePathname();
+  const pathname = router.pathname;
   const [showButton, setShowButton] = useState(false);
  
 

@@ -1,0 +1,127 @@
+/* Background Image */
+.middle-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 80px 10%;
+  background: url('/assest/bg.webp') no-repeat center center/cover;
+  color: whitesmoke;
+  text-align: left;
+  animation: fadeIn 1.5s ease-in-out;
+  z-index: 2;
+  margin-top: -115px;
+  height: auto; /* Auto height for better flexibility */
+}
+
+/* Columns */
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Icons, Title, and Description */
+.icon-section {
+  display: block;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon12 {
+  font-size: clamp(40px, 5vw, 55px); /* Scales based on screen size */
+  color: rgb(247, 206, 41);
+  margin-bottom: 12px;
+  animation: bounce 1.5s infinite;
+}
+
+h3 {
+  font-size: clamp(18px, 2vw, 22px); /* Responsive heading */
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: clamp(14px, 1.8vw, 17px); /* Responsive text */
+  opacity: 0.9;
+}
+
+/* Third Column Styling */
+.third-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.column-heading {
+  font-size: clamp(30px, 5vw, 53px);
+  font-weight: bold;
+  margin-bottom: -20px;
+}
+
+.column-description {
+  font-size: clamp(16px, 1.8vw, 18px);
+  line-height: 1.5;
+}
+
+/* Image Styling */
+.column-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto; /* Auto height for better responsiveness */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .middle-container {
+    grid-template-columns: 1fr; /* Stack columns for tablets */
+    gap: 30px;
+    padding: 60px 8%;
+  }
+  .column-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .middle-container {
+    padding: 40px 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .middle-container {
+    padding: 30px 5%;
+  }
+  .icon12 {
+    font-size: 40px; /* Reduce icon size for smaller screens */
+  }
+  h3 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 15px;
+  }
+}

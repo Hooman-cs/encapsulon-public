@@ -1,0 +1,188 @@
+/* --- CSS Variables for Global Styling --- */
+:root {
+  --primary-blue: rgb(3, 115, 225);
+  --dark-blue: rgb(6, 22, 99);
+  --accent-gold: rgb(197, 161, 24);
+  --text-black: #000000;
+  --bg-white: #ffffff;
+}
+
+/* --- Optimized Background Container --- */
+.middle-container12 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 80px 7%;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  
+  /* Background Logic: Fixed for Firefox and image anchoring */
+  background-color: var(--bg-white);
+  background-image: url('/assest/image3jpg.webp');
+  background-repeat: no-repeat;
+  background-position: left top; 
+  background-size: contain; 
+  
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* --- Text Content Section --- */
+.text-section {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+/* --- Firefox-Safe Static Gradient Heading --- */
+.main-heading {
+  /* Static Gradient */
+  background-image: linear-gradient(
+    90deg, 
+    var(--accent-gold), 
+    var(--primary-blue), 
+    var(--dark-blue)
+  );
+  
+  /* Clipping Logic */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Force Transparency for Firefox Visibility */
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+
+  /* Display fix to help Firefox anchor the clip correctly */
+  display: inline-block; 
+  width: 100%;
+  
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+
+  /* Animation removed as requested */
+}
+
+.main-description {
+  font-size: 1.4rem;
+  color: var(--text-black) !important;
+  line-height: 1.5;
+  max-width: 500px;
+  opacity: 1;
+}
+
+/* --- Process Grid Section --- */
+.four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Column Box --- */
+.column-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* --- Numbered Circles --- */
+.circle {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-white);
+  color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 2px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease;
+}
+
+.circle:hover {
+  transform: scale(1.1) translateY(-5px);
+  background: var(--primary-blue);
+  color: var(--bg-white);
+  box-shadow: 2px 5px 25px rgba(3, 115, 225, 0.3);
+}
+
+.column-description {
+  font-size: 1rem;
+  max-width: 300px;
+  color: #333;
+  opacity: 0.8;
+}
+
+/* --- Global Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet and Smaller: Remove image and set white background */
+@media (max-width: 1024px) {
+  .middle-container12 {
+    background-image: none !important;
+    background-color: var(--bg-white);
+    padding: 60px 5%;
+  }
+
+  .four-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+  
+  .text-section {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .four-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .main-heading {
+    font-size: 2.2rem;
+  }
+
+  .main-description {
+    font-size: 1.2rem;
+    margin: 0 auto 50px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .middle-container12 {
+    padding: 60px 3%;
+  }
+
+  .main-heading {
+    font-size: 1.8rem;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+}

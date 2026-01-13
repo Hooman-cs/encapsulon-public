@@ -6,16 +6,17 @@ import { ArrowUp } from "lucide-react"; // Arrow Icon
 import { FaShoppingCart, FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import "../components/Aboutnav/blogtext.css";
-import Footer from "../components/Footer/bottom";
-import { usePathname } from "next/navigation";
+import "../components/Aboutnav/Blog.css";
+import Footer from "../components/Footer/MainFooter";
+// import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter(); // Initialize useRouter
   const [showButton, setShowButton] = useState(false);
-const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state
-  const pathname = usePathname();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Dropdown state
+  // const pathname = usePathname();
+  const pathname = router.pathname; // Get current path for active state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
