@@ -1,0 +1,138 @@
+/* Background Image */
+.middle-container12 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 5%;
+  background: url('/assest/image3jpg.jpg') no-repeat center center/cover;
+  animation: fadeIn 1.5s ease-in-out;
+  background-size: contain;
+ 
+}
+
+/* Text Section */
+.text-section {
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+/* Main Heading */
+.main-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.4;
+  background: linear-gradient(to right, rgb(197, 161, 24), rgb(3, 115, 225), rgb(6, 22, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textColor 4s infinite alternate;
+  margin-bottom: 10px;
+}
+
+/* Keyframes */
+@keyframes textColor {
+  0% { background: linear-gradient(90deg, rgb(197, 161, 24), rgb(3, 115, 225)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  100% { background: linear-gradient(90deg, rgb(3, 115, 225), rgb(6, 22, 99)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Description */
+.main-description {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  max-width: 500px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* Four Columns Grid */
+.four-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Column Box */
+.column-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Numbered Circles */
+.circle {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  color: rgb(3, 115, 225);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 2px 0px 25px 0px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.circle:hover {
+  transform: scale(1.1);
+  box-shadow: 2px 5px 25px rgba(3, 115, 225, 0.3);
+}
+
+/* Column Description */
+.column-description {
+  font-size: 1rem;
+  max-width: 300px;
+  opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .four-columns {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .four-columns {
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+  
+  .main-heading {
+      font-size: 2.4rem;
+      text-align: center;
+  }
+
+  .main-description {
+      font-size: 1.2rem;
+      text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .middle-container12 {
+      padding: 60px 3%;
+  }
+
+  .main-heading {
+      font-size: 2rem;
+  }
+
+  .circle {
+      width: 80px;
+      height: 80px;
+      font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,107 @@
+/* Full-page background container */
+.containerback {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background: url('/assest/softgels.webp') no-repeat center/cover;
+  background-attachment: fixed; /* Parallax effect */
+  padding: 5vw; /* Responsive padding */
+}
+
+/* Apply animation only when scrolling */
+.containerback.animate.scrolling-down {
+  animation: moveBackgroundDown 3s linear forwards;
+}
+
+.containerback.animate.scrolling-up {
+  animation: moveBackgroundUp 3s linear forwards;
+}
+
+/* Keyframes for scrolling */
+@keyframes moveBackgroundDown {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+
+@keyframes moveBackgroundUp {
+  0% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: center top;
+  }
+}
+
+/* Heading styles */
+.heading12 {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 30%;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.8rem, 6vw, 3rem); /* Responsive font size */
+  line-height: clamp(30px, 6vw, 70px);
+  text-align: center;
+  max-width: 100%;
+  padding: 0 5vw; /* Ensures proper spacing */
+}
+
+/* Button styles */
+.scroll-button12 {
+  padding: 12px 24px;
+  font-size: clamp(14px, 1.2vw, 20px); /* Responsive font size */
+  border: none;
+  background-color: rgb(197, 161, 24);
+  color: white;
+  cursor: pointer;
+  margin-top: 30vh; /* Responsive spacing */
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.scroll-button12:hover {
+  background-color: #a37501;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .heading12 {
+    top: 35%;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    line-height: clamp(28px, 6vw, 60px);
+  }
+  .scroll-button12 {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 10vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .containerback {
+    height: 60vh;
+    padding: 5vw;
+  }
+  .heading12 {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+    line-height: clamp(25px, 7vw, 50px);
+    top: 30%;
+  }
+  .scroll-button12 {
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 10vh;
+  }
+}

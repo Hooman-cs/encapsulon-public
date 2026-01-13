@@ -1,0 +1,288 @@
+/* Container Styling */
+.second-body-container {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  
+}
+
+/* Wrapper for Grid Layout */
+.second-body-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .second-body-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Left Column (Text) */
+.text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.heading13 {
+  font-size: 3.9rem;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.2;
+  background: linear-gradient(90deg, rgb(197, 161, 24), rgb(3, 115, 225), rgb(6, 22, 99));
+  margin-bottom: 10px;
+  font-weight: 700;
+   margin: 0px 0px 20px 0px;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   animation: gradientText 5s infinite alternate;
+}
+@keyframes gradientText {
+  0% {
+    background: linear-gradient(90deg, rgb(197, 161, 24), rgb(3, 115, 225));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(90deg, rgb(3, 115, 225), rgb(6, 22, 99));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.description13 {
+  
+  
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 500;
+    margin: 0px 0px 50px 0px;
+    font-size: 1.28571rem;
+    color: #000;
+}
+
+/* Comment Section */
+.comment-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: -20px;
+}
+
+.comment-icon {
+  min-width: 80px;
+  height: 50px;
+margin-top: -180px;
+ color:rgb(197, 161, 24);
+  cursor: pointer;
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 60px 0px 0px;
+  max-width: 450px;
+}
+
+/* Comment Description (Top) */
+.comment-description {
+ 
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* Comment User */
+.comment-user {
+  line-height: 1.5;
+  font-style: italic;
+  margin-bottom: 3px;
+  font-size: 1.28571rem;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Comment Text (Bottom) */
+.comment-text {
+  color: #666666;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 13px;
+}
+
+/* Slider Dots */
+.dots-container {
+  display: flex;
+  justify-content:left;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.dots-container1 {
+  display: flex;
+  justify-content:left;
+  margin-top: 30px;
+  
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color:rgb(197, 161, 24);
+}
+
+/* Right Column (Image) */
+.image-column12 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  
+}
+
+/* Container for images */
+.image-pair-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image Styling */
+.feature-image {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Center Vertical Line */
+.center-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background-color: #333;
+  transform: translateX(-50%);
+  transition: left 0.5s ease-in-out;
+  z-index: 10;
+}
+
+/* Circle Button on Center Line */
+.circle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(197, 161, 24);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: left 0.5s ease-in-out;
+  z-index: 20;
+}
+
+/* Hover effect for better interaction */
+.circle-button:hover {
+  background-color: rgb(173, 141, 20);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Navigation Dots */
+.dots-container1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.dot1 {
+  width: 12px;
+  height: 12px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot1:hover {
+  transform: scale(1.2);
+}
+
+.dot1.active {
+  background-color: rgb(197, 161, 24);
+  transform: scale(1.3);
+}
+
+/* Animations for left and right movement */
+.image-pair-container.move-left .center-line,
+.image-pair-container.move-left .circle-button {
+  left: 30%;
+}
+
+.image-pair-container.move-right .center-line,
+.image-pair-container.move-right .circle-button {
+  left: 70%;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heading13 {
+    font-size: 2.5rem;
+  }
+  .description13 {
+    font-size: 1.1rem;
+  }
+  .comment-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading13 {
+    font-size: 2rem;
+  }
+  .description13 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .dots-container {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+  .image-column12 {
+    height: auto;
+  }
+  .feature-image {
+    width: 100%;
+    height: auto;
+  }
+}

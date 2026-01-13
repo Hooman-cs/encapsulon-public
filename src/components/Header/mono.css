@@ -1,0 +1,222 @@
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 5%;
+  background: url("/assest/pattern-1.png") no-repeat center center/cover;
+  animation: backgroundAnimation 10s linear infinite alternate;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  top:-50px;
+}
+
+/* Left Content */
+.header-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Animated Heading */
+.animated-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgb(197, 161, 24), rgb(3, 115, 225), rgb(6, 22, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+  animation: textColor 4s infinite alternate;
+}
+
+/* Description */
+.main-description {
+  font-size: 1.5rem;
+  color: #fff;
+  max-width: 80%;
+  margin-bottom: 12px;
+}
+
+/* Sub-description */
+.sub-description, .sub-description1 {
+  font-size: 1.1rem;
+  max-width: 80%;
+  margin-bottom: 12px;
+}
+
+.sub-description {
+  color: gray;
+}
+
+.sub-description1 {
+  color: black;
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+  display: flex;
+  align-items: center;
+  background: rgb(197, 161, 24);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.shop-now-btn:hover {
+  background: #a37501;
+  transform: scale(1.05);
+}
+
+/* Right Image */
+.header-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.header-image img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Keyframes Animations */
+@keyframes textColor {
+  0% {
+    background: linear-gradient(90deg, rgb(197, 161, 24), rgb(3, 115, 225));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  100% {
+    background: linear-gradient(90deg, rgb(3, 115, 225), rgb(6, 22, 99));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10% 5%;
+    height: auto;
+  }
+
+  .header-content {
+    width: 100%;
+    align-items: center;
+  }
+
+  .animated-heading {
+    font-size: 2.5rem;
+  }
+
+  .main-description,
+  .sub-description,
+  .sub-description1 {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .shop-now-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .header-image {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+
+  .header-image img {
+    max-width: 60%;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 5% 5%;
+  }
+
+  .header-content {
+    width: 100%;
+    align-items: center;
+  }
+
+  .animated-heading {
+    font-size: 2rem;
+  }
+
+  .main-description,
+  .sub-description,
+  .sub-description1 {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .shop-now-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .header-image {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 100px;
+  }
+
+  .header-image img {
+    max-width: 70%;
+  }
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .animated-heading {
+    font-size: 1.5rem;
+  }
+
+  .main-description,
+  .sub-description,
+  .sub-description1 {
+    font-size: 0.9rem;
+  }
+
+  .shop-now-btn {
+    font-size: 0.8rem;
+    padding: 7px 14px;
+  }
+
+  .header-image img {
+    max-width: 90%;
+  }
+}
